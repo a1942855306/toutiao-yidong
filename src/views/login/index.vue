@@ -45,7 +45,7 @@ export default {
   data () {
     return {
       user: {
-        mobile: '13911111111',
+        mobile: '13922222222',
         code: '246810'
       },
       formRules: {
@@ -108,6 +108,7 @@ export default {
       try {
         const res = await login(this.user)
         Toast.success('登录成功')
+        this.$router.back()
         this.$store.commit('setUser', res.data.data)
         // console.log(res)
       } catch (err) {
